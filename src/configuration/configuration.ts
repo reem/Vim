@@ -214,7 +214,8 @@ class Configuration implements IConfiguration {
     switchIMCmd: '',
   };
 
-  timeout = 1000;
+  insertModeTimeout = 1000;
+  otherModesTimeout = 10000;
 
   showcmd = true;
 

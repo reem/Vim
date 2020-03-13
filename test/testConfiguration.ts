@@ -41,7 +41,8 @@ export class Configuration implements IConfiguration {
     switchIMCmd: '',
     obtainIMCmd: '',
   };
-  timeout = 1000;
+  insertModeTimeout = 1000;
+  otherModesTimeout = 1000;
   showcmd = true;
   showmodename = true;
   leader = '//';

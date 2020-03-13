@@ -273,7 +273,12 @@ export class ModeHandler implements vscode.Disposable {
     const oldStatusBarText = StatusBar.getText();
 
     try {
-      const isWithinTimeout = now - this.vimState.lastKeyPressedTimestamp < configuration.timeout;
+      let timeout = configuration.otherModesTimeout;
+      if (this.vimState.currentMode === Mode.Insert) {
+        timeout = configuration.insertModeTimeout;
+      }
+
+      const isWithinTimeout = now - this.vimState.lastKeyPressedTimestamp < timeout;
       if (!isWithinTimeout) {
         // sufficient time has elapsed since the prior keypress,
         // only consider the last keypress for remapping

@@ -177,9 +177,14 @@ export interface IConfiguration {
   easymotionKeys: string;
 
   /**
-   * Timeout in milliseconds for remapped commands.
+   * Timeout in milliseconds for remapped commands in insert mode.
    */
-  timeout: number;
+  insertModeTimeout: number;
+
+  /**
+   * Timeout in milliseconds for remapped commands in normal mode.
+   */
+  otherModesTimeout: number;
 
   /**
    * Display partial commands on status bar?
